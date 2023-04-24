@@ -1,4 +1,3 @@
-
-#Unidade 1 - Turtlesim
+##Unidade 1 - Turtlesim
 
 A proposta apresenta principalmente com um Script Python que envia de maneira sequencial cada deslocamento da tartaruga a fim de desenhar uma estrela. Para tal implementação foi utilizada a feature Windows Subsystem for Linux, o Sistema Operacional Ubuntu e seu Framework Robot Operating System versão Humble. Após realizar as devidas instalações, deve-se executar o Turtlesim no terminal ubuntu utilizando do ROS2. (Utilize - ros2 run turtlesim turtlesim_node). Em seguida em outro terminal Ubuntu, deve-se navegar até a pasta onde se encontra o script python e executa-lo. (Utilize -  cd /mnt/<NOME_DISCO/Users/<USUÁRIO> - python3 estrela.py). O script conta com a biblioteca RCLpy que nos permite trabalhar com os recursos do ROS 2, como publicação e subscrição de tópicos. Com isso, público de maneira sequencial no tópico 'turtle1/cmd_vel', que é ouvido pelo Turtlesim e em seguida executado pelo mesmo.
