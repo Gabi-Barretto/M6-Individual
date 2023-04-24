@@ -18,24 +18,24 @@ class TurtleController(Node):
 
     def move_turtle(self):
 
-        self.twist_msg_.linear.x = 6.0
+        self.twist_msg_.linear.x = 2.0
         self.twist_msg_.linear.y = 0.0
         self.publisher_.publish(self.twist_msg_)
         time.sleep(2) 
-        self.twist_msg_.linear.x = -5.0
-        self.twist_msg_.linear.y = -3.0
+        self.twist_msg_.linear.x = -1.5
+        self.twist_msg_.linear.y = -1.0
         self.publisher_.publish(self.twist_msg_)
         time.sleep(2)      
-        self.twist_msg_.linear.x = 2.0
-        self.twist_msg_.linear.y = 5.0
+        self.twist_msg_.linear.x = 0.5
+        self.twist_msg_.linear.y = 1.5
         self.publisher_.publish(self.twist_msg_)
         time.sleep(2)
-        self.twist_msg_.linear.x = -2.0
-        self.twist_msg_.linear.y = -5.0
+        self.twist_msg_.linear.x = 0.5
+        self.twist_msg_.linear.y = -1.5
         self.publisher_.publish(self.twist_msg_)
         time.sleep(2)   
-        self.twist_msg_.linear.x = -5.0
-        self.twist_msg_.linear.y = 3.0
+        self.twist_msg_.linear.x = -1.5
+        self.twist_msg_.linear.y = 1.0
         self.publisher_.publish(self.twist_msg_)
         time.sleep(2)   
         
