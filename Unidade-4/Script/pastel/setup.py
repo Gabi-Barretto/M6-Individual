@@ -20,8 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'nodo_controle = pastel.controle:main',
-            'nodo_odometro = pastel.odometro:main'
+            'nodo_controle = pastel.controle:main'
         ],
     },
 )
