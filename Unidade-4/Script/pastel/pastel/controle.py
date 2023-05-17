@@ -12,7 +12,7 @@ queue = deque()
 
 class TurtleController(Node):
     def __init__(self):
-        super().__init__('turtle_controller')
+        super().__init__('nodo_controle')
         self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
         self.timer_ = self.create_timer(1, self.move_turtle)
         self.twist_msg_ = Twist()
@@ -26,9 +26,10 @@ class TurtleController(Node):
         )
 
     def move_turtle(self):
-        queue.append(random.randint(3, 9))
-        self.twist_msg_.linear.x = queue
-        self.twist_msg_.angular.z = 1.0
+        number = random.randint(0, 2)
+        queue.append(number)
+        self.twist_msg_.linear.x = float(number)
+        #self.twist_msg_.angular.z = 1.0
         self.publisher_.publish(self.twist_msg_)
         queue.popleft()
 
