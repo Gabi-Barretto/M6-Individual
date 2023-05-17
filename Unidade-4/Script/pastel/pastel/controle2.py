@@ -46,22 +46,23 @@ class TurtleBotController(Node):
 
     def move_to_next_point(self):
         next_point = self.goal_position.popleft()
+        self.get_logger().info(f"next_point: {next_point}")
         goal_x = next_point.x
         goal_y = next_point.y
-        while self.distance(self.current_position[0], self.current_position[1], goal_x, goal_y) > 0.1:
-            x_start, y_start, z_start = self.current_position
+        while self.distance(self.current_position[0], self.current_position[1], goal_x, goal_y) > 0.5:
+            x_start, y_start, theta_start = self.current_position
             x_goal, y_goal = goal_x, goal_y
             theta_goal = atan2(y_goal - y_start, x_goal - x_start)
             twist = Twist()
             twist.linear.x = 1.0
-            twist.angular.z = 0.3 * (theta_goal - self.current_position[2])
+            twist.angular.z = 0.3 * (theta_goal - theta_start)
             self.velocity_publisher.publish(twist)
-            sleep(0.1)
+            sleep(0.3)
             rclpy.spin_once(self)
 
         twist = Twist()
-        twist.linear.x = 0
-        twist.angular.z = 0
+        twist.linear.x = 0.0
+        twist.angular.z = 0.0
         self.velocity_publisher.publish(twist)
 
 def main(args=None):
