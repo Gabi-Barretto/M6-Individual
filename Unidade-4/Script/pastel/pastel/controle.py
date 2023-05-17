@@ -10,6 +10,7 @@ import random
 import math
 import csv
 
+queue = deque()
 
 class TurtleController(Node):
     def __init__(self, control_period=0.2):
@@ -46,6 +47,7 @@ class TurtleController(Node):
 def main(args=None):
 
     rclpy.init()
+
     turtle_controller = TurtleController()
     rclpy.spin(turtle_controller)
     turtle_controller.destroy_node()
