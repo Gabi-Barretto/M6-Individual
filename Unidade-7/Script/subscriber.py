@@ -47,6 +47,7 @@ class ImageSubscriber(Node):
     # Used to convert between ROS and OpenCV images
     self.br = CvBridge()
 
+    # Contador de frames
     self.frame_number = 0
    
   def listener_callback(self, data):
